@@ -1,0 +1,672 @@
+/* ---[App]--- */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* background-color: red; */
+    background: #d9d6c7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* ---[App.jsx]--- */
+.Navbar {
+    width: 100%;
+    padding: 20px 24px;
+    background-color: #9b947c;
+    /* background-color: red; */
+    border-bottom: 4px solid #76705c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.Navbar h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+.Navbar div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.Navbar a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    transition: 0.2s;
+}
+
+.Navbar a:hover {
+    color: #ead07d;
+    text-decoration: underline;
+}
+
+.logout-Btn {
+    padding: 6px 14px;
+    font-size: 16px;
+    background-color: #c2b899;
+    border: 1px solid #9b947c;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    color: white;
+    font-weight: bold;
+}
+
+.logout-Btn:hover {
+    background-color: #d0c08b;
+    transform: translateY(-2px);
+}
+
+
+
+/* ---[LoginPage.jsx]--- */
+.Authen-Container {
+    max-width: 450px;
+    margin: 150px auto;
+    padding: 40px 30px;
+    background: #eceae2;
+    border: 1px solid #e1d8ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #d0c08b;
+    text-align: center;
+}
+
+.Authen-Container h1 {
+    font-size: 36px;
+    color: #a35858;
+    margin-bottom: 10px;
+}
+
+.Authen-Description {
+    font-size: 16px;
+    /* font-weight: bold; */
+    color: black;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.Authen-Input {
+    width: 60%;
+    padding: 10px 12px;
+    font-size: 16px;
+    border-radius: 1px solid #c5b8ff;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.2 ease-in-out;
+}
+
+.Authen-Input:focus {
+    border-color: #d0c08b;
+    box-shadow: 0 0 6px rgba(91, 61, 216, 0.3);
+}
+
+.authen-Btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #9b947c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.authen-Btn:hover {
+    background-color: #c1b280;
+    transform: translateY(-2px);
+}
+
+
+/* ---[IntroPage.jsx]--- */
+.Intro-Container {
+    /* border: 2px solid red; */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+
+    text-align: center;
+}
+
+.Intro-Title {
+    /* border: 2px solid red; */
+    font-size: 35px;
+    font-weight: bold;
+    color: #a35858;
+    margin-bottom: 20px;
+}
+
+.Intro-Description {
+    /* border: 2px solid red; */
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.Authen-Title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #a35858;
+}
+
+.Authen-Description {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+.enter-Btn {
+    padding: 12px 26px;
+    font-size: 18px;
+    background-color: #9b947c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: 0.2s ease-in-out;
+}
+
+.enter-Btn:hover {
+    background-color: #c1b280;
+    transform: translateY(-2px);
+}
+
+/* ---[Post.jsx]--- */
+.PostCard {
+    width: 100%;
+    max-width: 340px;
+    background-color: #f2f0f9;
+    padding: 16px 20px;
+    border: 1px solid #f2f0f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(100, 70, 180, 0.08);
+    transition: 0.2s ease-in-out;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.PostCard:hover {
+    box-shadow: 0 6px 16px rgba(100, 70, 180, 0.15);
+    transform: translateY(-3px);
+}
+
+.P-Link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.P-topic {
+    font-size: 25px;
+    color: #db4b4b;
+}
+
+.P-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: #db4b4b;
+}
+
+.P-author {
+    font-size: 18px;
+    color: #db4b4b;
+}
+
+.Post-Image {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #d8cdfa;
+}
+
+.P-content {
+    font-size: 15px;
+    color: #555;
+    margin: 0;
+    word-break: break-all;
+}
+
+.P-ratings {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+    padding-top: 8px;
+    position: relative;
+}
+
+.like-Btn, .dislike-Btn {
+    padding: 6px 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.like-Btn {
+    background-color: #cabaef;
+    color: #353eb8;
+}
+
+.dislike-Btn {
+    background-color: #ffe1e1;
+    color: #b83535;
+}
+
+
+/* ---[PostCard.jsx]--- */
+.PostContainer {
+    /* max-width: 600px;
+    width: 90%;
+    margin: 20px 0;
+    padding: 16px 20px; */
+    width: 100%;
+    max-width: 340px;
+    min-height: 260px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #f2f0f9;
+    background: #f2f0f9;
+
+    box-shadow: 0 4px 12px rgba(100, 70, 180, 0.08);
+    transition: 0.2s ease-in-out;
+}
+
+.PostContainer:hover {
+    box-shadow: 0 6px 16px rgba(100, 70, 180, 0.15);
+    transform: translateY(-3px);
+}
+
+.PC-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.PC-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.PC-topic {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #db4b4b;
+}
+
+.PC-FlagFilter {
+    display: flex;
+    flex-direction: column;
+}
+
+.PC-flag {
+    width: fit-content;
+    margin-bottom: 6px;
+    padding: 3px 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: #db4b4b;
+    color: white;
+}
+
+.PC-img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #f2f0f9;
+}
+
+.PC-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 8px;
+    position: relative;
+}
+
+.PC-time {
+    position: absolute;
+    bottom: 4px;
+    right: 6px;
+    font-size: 0.72rem;
+    opacity: 0.75;
+}
+
+.vote {
+    font-size: 16px;
+    font-weight: bold;
+    color: #db4b4b;
+}
+
+
+/* ---[PostFeed.jsx]--- */
+.PostFeedContainer {
+    width: 95%;
+    /* max-width: 900px; */
+    margin: 20px auto;
+    padding-bottom: 40px;
+}
+
+.PF-title {
+    margin-bottom: 20px;
+    font-size: 34px;
+    font-weight: bold;
+    color: #a35858;
+}
+
+.Sort-select, .Flag-select, .Search-Input {
+    padding: 4px 6px;
+    font-size: 15px;
+    border: 1px solid #f2f0f9;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.Sort-select:focus, .Flag-select:focus, .Search-Input:focus {
+    box-shadow: 0 0 6px rgba(91, 61, 216, 0.3);
+}
+
+.PF-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.PF-controls label {
+    font-size: 16px;
+    color: #3a2e6b;
+    font-weight: bold;
+}
+
+.NA {
+    font-size: 16px;
+    color: #777;
+    padding: 20px 0;
+}
+
+.Horizontal-Scroll {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+
+/* ---[UserPost.jsx]--- */
+.UserContainer {
+    width: 95%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding-bottom: 40px;
+}
+
+.UC-Title {
+    font-size: 34px;
+    font-weight: bold;
+    color: #a35858;
+    margin-bottom: 20px;
+}
+
+.UserContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.UC-Empty {
+    font-size: 18px;
+    color: #777;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+
+/* ---[CreatePost.jsx][EditPost.jsx]--- */
+.FormContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.FormContent {
+    width: 100%;
+    max-width: 550px;
+    background: #ececf1;
+    padding: 35px 30px;
+    border: 1px solid #ececf1;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(100, 70, 180, 0.1);
+}
+
+.CreatePostTitle, .EditPostTitle {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d15b5b;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.CreatePostForm, .EditPostForm {
+    display: flex;
+    flex-direction: column;
+    /* gap: 16px; */
+}
+
+.CreatePostForm label, .EditPostForm label {
+    font-size: 16px;
+    color: #d15b5b;
+    font-weight: bold;
+}
+
+.CreatePostForm input, .CreatePostForm select, .CreatePostForm textarea,
+.EditPostForm input, .EditPostForm select, .EditPostForm textarea {
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #3a2e6b;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.CreatePostForm input:focus, .CreatePostForm select:focus, .CreatePostForm textarea:focus,
+.EditPostForm input:focus, .EditPostForm select:focus, .EditPostForm textarea:focus {
+    box-shadow: 0 0 6px rgba(91, 61, 216, 0.3);
+}
+
+.CreatePostForm textarea, .EditPostForm textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.CreatePost-Btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #a35858;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.CreatePost-Btn:hover {
+    background-color: #e75d5d;
+    transform: translateY(-2px);
+}
+
+.EditButtons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.EditPost-Btn , .DeletePost-Btn {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.EditPost-Btn {
+    background-color: #6246d1;
+    color: white;
+    border: none;
+}
+
+.DeletePost-Btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+}
+
+.EditPost-Btn:hover {
+    background-color: #482fb0;
+    transform: translateY(-2px);
+}
+
+.DeletePost-Btn:hover {
+    background-color: #d93636;
+    transform: translateY(-2px);
+}
+
+
+/* ---[PostDetails/jsx]--- */
+.PostDetailsContainer {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ececf1;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.1);
+    /* font-family: Georgia, serif; */
+}
+
+.date-text {
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    text-align: right;
+}
+
+.PostDetailsContainer h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #d15b5b;
+}
+
+.PostDetailsContainer h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.creator-text {
+    font-size: 1rem;
+    color: #d15b5b;
+    margin-bottom: 10px;
+}
+
+.creator-text span {
+    font-weight: bold;
+}
+
+.PD-vid-con a {
+    margin-left: 6px;
+    color: #4b37d6;
+    text-decoration: underline;
+}
+
+.PD-ratings {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.commentBox {
+    margin-top: 25px;
+}
+
+.commentBox textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.commentBox button {
+    margin: 10px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: #dcd0ff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.PD-comments {
+    margin-top: 25px;
+}
+
+.commentCard {
+    background: white;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.commentCard small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.PostDetailsContainer button {
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 8px 20px;
+    border: none;
+    background: #c68c8c;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.PostDetailsContainer button:hover {
+    background: #9e6868;
+    transform: translateY(-2px);
+}
+
+
+
+/* ---[Other Function]--- */
+
